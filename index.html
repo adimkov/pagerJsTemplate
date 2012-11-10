@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>-->
+
+    <link href="scripts/lib/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    
+    <script data-main="scripts/main.js" type="text/javascript" src="scripts/lib/requireJs/require.js"></script>
+    <script type="text/javascript">
+        requirejs.config({
+            baseUrl: 'scripts/lib',
+            shim: {
+                bootstrap: ['jquery'],
+                hashchange: ['jquery'],
+            },
+            paths: {
+                jquery: 'jQuery/jquery-1.8.2.min',
+                underscore: 'lodash/lodash.min',
+                knockout: 'knockout/knockout-2.1.0',
+                pager: 'pagerJs/pager.min',
+                bootstrap: 'bootstrap/js/bootstrap.min',
+                hashchange: 'jQuery/jquery.ba-hashchange.min',
+                text: 'requireJs/text',
+                
+                vm: '../viewModel',
+                view: '../../view',
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#"><strong>Single page application</strong> template</a>
+            <ul class="nav">
+                <!--to do: generate links-->
+                <li class="active"><a href="#start/">Home</a></li>
+                <li><a href="#second/">Second</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+       <div data-bind="page: {id: '?', sourceOnShow: 'view/{1}.html'}"></div>
+    </div>
+</body>
+</html>
